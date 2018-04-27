@@ -70,7 +70,7 @@ class block_aspirelists extends block_base {
                 $mapping = json_decode(get_config('aspirelists', 'timePeriodMapping'),true);
                 if($mapping != null)
                 {
-                    $urlTimePeriod = strtolower($mapping[$results[1]]); // make sure is lowercase for URL.
+                    if($mapping[$results[1]]) $urlTimePeriod = strtolower($mapping[$results[1]]); // make sure is lowercase for URL.
                 }
                 else
                 {
